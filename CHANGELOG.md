@@ -8,12 +8,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Added support for disabling touch handling on SwiftUI views via the `allowsHitTesting` modifier
+- Added SwiftUI documentation to the README.md
+- Added properties to `CalendarViewProxy` for getting the `visibleMonthRange` and `visibleDayRange` 
 
 ### Fixed
 - Fixed an issue that could cause accessibility focus to shift unexpectedly
+- Fixed a screen-pixel alignment issue
+- Fixed a performance issue caused by month headers recalculating their size too often
+- Fixed a performance issue caused by the item models for day ranges and month backgrounds not being cached
 
 ### Changed
 - Rewrote accessibility code to avoid posting notifications, which causes poor Voice Over performance and odd focus bugs
+- Rewrote `ItemViewReuseManager` to perform fewer set operations, improving CPU usage by ~15% when scrolling quickly on an iPhone XR
+- Updated how we embed SwiftUI views to improve scroll performance by ~35% when scrolling quickly
 
 ## [v2.0.0](https://github.com/airbnb/HorizonCalendar/compare/v1.16.0...v2.0.0) - 2023-12-19
 

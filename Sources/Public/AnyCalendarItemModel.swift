@@ -43,6 +43,7 @@ public protocol AnyCalendarItemModel {
   /// - Note: There is no reason to invoke this function from your feature code; it should only be invoked internally.
   func _isContentEqual(toContentOf other: AnyCalendarItemModel) -> Bool
 
+  // TODO: Remove this in the next major release.
   mutating func _setSwiftUIWrapperViewContentIDIfNeeded(_ id: AnyHashable)
 
 }
@@ -54,7 +55,6 @@ public protocol AnyCalendarItemModel {
 ///
 /// - Note: There is no reason to create an instance of this enum from your feature code; it should only be invoked internally.
 public struct _CalendarItemViewDifferentiator: Hashable {
-  let viewRepresentableTypeDescription: String
-  let viewTypeDescription: String
+  let viewType: ObjectIdentifier
   let invariantViewProperties: AnyHashable
 }
